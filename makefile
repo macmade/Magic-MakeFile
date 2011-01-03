@@ -257,10 +257,7 @@ _start:
 ifeq ($(DISPLAY_HEADER),1)
 	@echo
 	@echo \#--------------------------------------------------
-	@echo \# $(LANG_MAKESTART)
-	@echo \# 
-	@echo \# $(subst _VERSION_,3.81,$(LANG_MAKEVERSION_NEEDED))
-	@echo \# $(subst _VERSION_,$(MAKE_VERSION),$(LANG_MAKEVERSION_CURRENT))
+	@echo \# $(subst _VERSION_,$(MAKE_VERSION),$(LANG_MAKESTART))
 	@echo \#--------------------------------------------------
 endif
 
@@ -270,9 +267,6 @@ ifeq ($(DISPLAY_FOOTER),1)
 	@echo
 	@echo \#--------------------------------------------------
 	@echo \# $(LANG_MAKEEND)
-	@echo \# 
-	@echo \# $(LANG_THANX)
-	@echo \# $(LANG_GOODBYE)
 	@echo \#--------------------------------------------------
 	@echo
 endif

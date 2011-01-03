@@ -54,12 +54,8 @@
 LANG_HASLABELS           := 1
 
 # Language labels
-LANG_MAKESTART           := Début du script make
-LANG_MAKEVERSION_NEEDED  := Version de GNU Make requise: _VERSION_
-LANG_MAKEVERSION_CURRENT := Version actuelle de GNU Make: _VERSION_
+LANG_MAKESTART           := Début du script make - GNU Make _VERSION_
 LANG_MAKEEND             := Fin du script make
-LANG_THANX               := Merci d\'avoir utilisé ce makefile
-LANG_GOODBYE             := Bonne journée
 LANG_DONE                := Terminé
 LANG_LIB_START           := Recherche et génération des librairies
 LANG_LIB_END             := Toutes les librairies ont été traités
