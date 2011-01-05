@@ -364,11 +364,17 @@ $(_DIR_BUILD_BIN)%: $(_DIR_BUILD_OBJ)%$(EXT_OBJECT) $$(patsubst $$(_STEM),$(_DIR
 		\
 		@echo\
 		&& echo ------ $(subst _TFILE_,$(@F),$(LANG_DEPS_FIND))\
-		&& echo $(patsubst %,"\n--------- "%,$(DEPS_LIB_$(@F)) $(DEPS_$(@F)))"\n"\
+		&& echo $(patsubst %,"\n--------- "%, $(DEPS_$(@F)))"\n"\
+		&& echo ------ $(LANG_DONE)\
+		&& echo ------ $(subst _TFILE_,$(@F),$(LANG_DEPS_LIB_FIND))\
+		&& echo $(patsubst %,"\n--------- "%, $(DEPS_LIB_$(@F)))"\n"\
+		&& echo ------ $(LANG_DONE)\
+		&& echo ------ $(subst _TFILE_,$(@F),$(LANG_DEPS_SYSLIB_FIND))\
+		&& echo $(patsubst %,"\n--------- "%, $(DEPS_SYSLIB_$(@F)))"\n"\
 		&& echo ------ $(LANG_DONE)\
 		&& echo\
-		&& echo ------ $(subst _TFILE_,$(@F),$(subst _DIR_BUILD_,$(_DIR_BUILD_BIN),$(subst _OFILE_,$(_DIR_BUILD_OBJ)$(@F)$(EXT_OBJECT),$(subst _DEPS_,"\n"$(patsubst %,"\n--------- "$(_DIR_BUILD_LIB)%$(EXT_LIB_ARCHIVE),$(DEPS_LIB_$(@F)))$(patsubst %,"\n--------- "$(_DIR_BUILD_OBJ)%$(EXT_OBJECT),$(DEPS_$(@F)))"\n",$(LANG_EXEC_BUILD_HASDEPS)))))\
-		&& $(LIBTOOL) $(_ARGS_LIBTOOL) $(ARGS_LIBTOOL_LINK) $(CC) $(if $(findstring Objective-C,$(code)), -framework $(OBJC_FRAMEWORK)) -o $@ $(_DIR_BUILD_OBJ)$(@F)$(EXT_OBJECT) $(patsubst %,$(_DIR_BUILD_LIB)%$(EXT_LIB_ARCHIVE),$(DEPS_LIB_$(@F))) $(patsubst %,$(_DIR_BUILD_OBJ)%$(EXT_OBJECT),$(DEPS_$(@F))) $(_ARGS_CC) $(CFLAGS)\
+		&& echo ------ $(subst _TFILE_,$(@F),$(subst _DIR_BUILD_,$(_DIR_BUILD_BIN),$(subst _OFILE_,$(_DIR_BUILD_OBJ)$(@F)$(EXT_OBJECT),$(subst _DEPS_,"\n"$(patsubst %,"\n--------- "$(_DIR_BUILD_LIB)%$(EXT_LIB_ARCHIVE),$(DEPS_LIB_$(@F)))$(patsubst %,"\n--------- "$(_DIR_BUILD_OBJ)%$(EXT_OBJECT),$(DEPS_$(@F)))$(patsubst %,"\n--------- -l"%,$(DEPS_SYSLIB_$(@F)))"\n",$(LANG_EXEC_BUILD_HASDEPS)))))\
+		&& $(LIBTOOL) $(_ARGS_LIBTOOL) $(ARGS_LIBTOOL_LINK) $(CC) $(if $(findstring Objective-C,$(code)), -framework $(OBJC_FRAMEWORK)) -o $@ $(_DIR_BUILD_OBJ)$(@F)$(EXT_OBJECT) $(patsubst %,$(_DIR_BUILD_LIB)%$(EXT_LIB_ARCHIVE),$(DEPS_LIB_$(@F))) $(patsubst %,$(_DIR_BUILD_OBJ)%$(EXT_OBJECT),$(DEPS_$(@F))) $(patsubst %,"-l"%,$(DEPS_SYSLIB_$(@F))) $(_ARGS_CC) $(CFLAGS)\
 		&& echo ------ $(LANG_DONE)\
 		,\
 		@echo\
