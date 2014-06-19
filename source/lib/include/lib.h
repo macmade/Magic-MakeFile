@@ -1,0 +1,3 @@
+/* $Id$ */
+
+void lib( void );
