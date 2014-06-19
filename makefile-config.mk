@@ -71,7 +71,7 @@ DEPS_main           =
 # Dependancies for the executables (libraries)
 #-------------------------------------------------------------------------------
 
-DEPS_LIB_main       = 
+DEPS_LIB_main       = lib
 
 #-------------------------------------------------------------------------------
 # Dependancies for the executables (system libraries)
