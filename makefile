@@ -32,7 +32,7 @@
 # IMPORTANT NOTE:
 # 
 # You are not supposed to edit this file.
-# For the configuration, please see the configuration.mk file.
+# For the configuration, please see the makefile-config.mk file.
 # Language labels are also in separate files.
 # 
 # Please note that you need at least version 3.81 of GNU Make to use this file.
